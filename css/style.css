@@ -114,21 +114,24 @@ pre {
     display: flex;
     gap: 20px;
 }
-/* Ensure the container is a circle */
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px auto;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 3px solid #e0e0e0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* 6. Image Adjustments */
+/* This targets general images on the page */
+img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 10px 0;
 }
 
-/* Force the image inside to fit the container */
+/* This specifically targets ONLY the profile photo, 
+   overriding the general 'img' rule above */
 .profile-photo img {
-    width: 100%;
-    height: 100%;
+    width: 200px !important;
+    height: 200px !important;
+    max-width: none !important; /* This stops the 80% rule from blocking it */
     object-fit: cover;
+    border-radius: 50%;
     display: block;
+    margin: 0;
 }
