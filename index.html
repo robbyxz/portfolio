@@ -53,17 +53,17 @@
             <div class="project-card">
     <h3>CASE STUDY: FRAUD DETECTION SYSTEM</h3>
     <h4>I. Executive Summary & Business Context</h4>
-    <p>Financial institutions require rapid detection to prevent losses from fraudulent credit card transactions. This project focuses on building an automated classification pipeline to identify anomalous activity, balancing the need for high detection rates (recall) against the operational cost of false positives (precision).</p>
+    <p>Financial institutions require robust detection systems to minimize losses from fraudulent credit card transactions. This project developed an automated classification pipeline to distinguish between legitimate and fraudulent activity, focusing on high-performance detection within highly imbalanced datasets.</p>
     
     <h4>II. Methodology & Technical Approach</h4>
     <ul>
-        <li><b>Preprocessing:</b> Temporal feature engineering from transaction timestamps and dummy encoding for categorical variables.</li>
-        <li><b>Modeling:</b> Benchmarked performance using Logistic Regression, Random Forest, and XGBoost; applied SMOTE to address severe class imbalance.</li>
-        <li><b>Optimization:</b> Evaluated model stability using ROC-AUC metrics to ensure robust performance across minority fraud classes.</li>
+        <li><b>Preprocessing:</b> Data cleaning, duplicate removal, and categorical encoding via dummy variables.</li>
+        <li><b>Feature Engineering:</b> Extracted temporal patterns (hour, day, month) and demographic features (age) to identify risk-prone behavior.</li>
+        <li><b>Optimization:</b> Applied SMOTE to handle class imbalance (0.58% fraud rate) and benchmarked Logistic Regression, Random Forest, and XGBoost models.</li>
     </ul>
 
     <h4>III. Business Impact</h4>
-    <p>This automated system provides real-time transaction scoring, enabling risk-based decisioning that reduces direct financial exposure while minimizing customer friction caused by false alarms.</p>
+    <p>This automated system provides real-time transaction scoring, reducing financial exposure through high recall and minimizing operational costs by lowering false alarms via high-precision classification.</p>
     <a href="fraud_detection.html">View Full Case Study</a>
 </div>
             
