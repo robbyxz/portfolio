@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spam Detection | Robert Czech</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,43 +26,43 @@
                 
                 <div class="summary-box" style="background: #f4f4f4; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
                     <h3>PROJECT SNAPSHOT</h3>
-                    <p><strong>Business Goal:</strong> Automate spam filtering for real-world email/SMS pipelines to protect user trust and reduce manual moderation costs[cite: 1].</p>
-                    <p><strong>Key Result:</strong> RNN model deployed with high performance; optimized the balance between phishing protection (Recall) and legitimate message delivery (Precision)[cite: 1].</p>
-                    <p><strong>Tech Stack:</strong> Python, TensorFlow/Keras, Scikit-Learn, RNN Architectures[cite: 1].</p>
+                    <p><strong>Business Goal:</strong> Automate spam filtering for real-world email/SMS pipelines to protect user trust and reduce manual moderation costs.</p>
+                    <p><strong>Key Result:</strong> RNN model deployed with high performance; optimized the balance between phishing protection (Recall) and legitimate message delivery (Precision).</p>
+                    <p><strong>Tech Stack:</strong> Python, TensorFlow/Keras, Scikit-Learn, RNN Architectures.</p>
                 </div>
 
                 <h4>I. Executive Summary & Business Context</h4>
-                <p>Spam messages expose users to phishing and fraud risks while degrading platform trust[cite: 1]. This project built an automated filtering pipeline for real-world email/SMS environments, ensuring messages are classified before reaching the end-user[cite: 1]. The primary objective was balancing spam recall with the prevention of false positives[cite: 1].</p>
+                <p>Spam messages expose users to phishing and fraud risks while degrading platform trust. This project built an automated filtering pipeline for real-world email/SMS environments, ensuring messages are classified before reaching the end-user. The primary objective was balancing spam recall with the prevention of false positives.</p>
 
                 <h4>II. Exploratory Data Analysis & Strategy</h4>
-                <p>One of the first questions I faced was whether the 87% non-spam to 13% spam split was a true hurdle or just a common characteristic of the data[cite: 1]. Rather than jumping straight to resampling techniques, I decided to establish a performance baseline first[cite: 1]. I wanted to see how the models would handle the data in its raw form, allowing me to measure precision and recall without any external intervention[cite: 1].</p>
+                <p>One of the first questions I faced was whether the 87% non-spam to 13% spam split was a true hurdle or just a common characteristic of the data. Rather than jumping straight to resampling techniques, I decided to establish a performance baseline first. I wanted to see how the models would handle the data in its raw form, allowing me to measure precision and recall without any external intervention.</p>
                 
                 <img src="images/classimbalance_spamdet.jpg" alt="class imbalance" />
-                <p>The analysis revealed distinct structural differences: most non-spam emails are fewer than 100 characters long, whereas spam messages tend to cluster around the 160-character mark[cite: 1]. These insights guided the subsequent modeling approach[cite: 1].</p>
+                <p>The analysis revealed distinct structural differences: most non-spam emails are fewer than 100 characters long, whereas spam messages tend to cluster around the 160-character mark. These insights guided the subsequent modeling approach.</p>
                 <img src="images/message_len.jpg" alt="message length" />
 
                 <h4>III. Methodology & Technical Approach</h4>
-                <p>I benchmarked three distinct modeling strategies, focusing on <b>Precision</b> (minimizing false alarms for legitimate users) and <b>Recall</b> (maximizing the detection of actual spam)[cite: 1]:</p>
+                <p>I benchmarked three distinct modeling strategies, focusing on <b>Precision</b> (minimizing false alarms for legitimate users) and <b>Recall</b> (maximizing the detection of actual spam):</p>
                 <ul>
-                    <li><b>Multinomial Naive Bayes:</b> Provided a strong baseline with high spam recall (0.93), capturing the vast majority of threats while maintaining high precision (0.95)[cite: 1].</li>
-                    <li><b>Bernoulli Naive Bayes:</b> Prioritized extreme precision to ensure zero disruption to legitimate traffic (1.00 recall for "Ham")[cite: 1]. This is ideal for banking or critical support environments where blocking a legitimate message is more costly than letting some spam pass through[cite: 1].</li>
-                    <li><b>RNN Model:</b> Achieved the optimal balance, with high precision (0.98) and strong recall (0.91)[cite: 1]. This indicates a sophisticated ability to distinguish between classes while keeping false alarms at a near-zero level for legitimate users[cite: 1].</li>
+                    <li><b>Multinomial Naive Bayes:</b> Provided a strong baseline with high spam recall (0.93), capturing the vast majority of threats while maintaining high precision (0.95).</li>
+                    <li><b>Bernoulli Naive Bayes:</b> Prioritized extreme precision to ensure zero disruption to legitimate traffic (1.00 recall for "Ham"). This is ideal for banking or critical support environments where blocking a legitimate message is more costly than letting some spam pass through.</li>
+                    <li><b>RNN Model:</b> Achieved the optimal balance, with high precision (0.98) and strong recall (0.91). This indicates a sophisticated ability to distinguish between classes while keeping false alarms at a near-zero level for legitimate users.</li>
                 </ul>
 
                 <h4>IV. Understanding the Metrics</h4>
-                <p>In this project, these metrics serve specific business functions[cite: 1]:</p>
+                <p>In this project, these metrics serve specific business functions:</p>
                 <ul>
-                    <li><b>Precision:</b> Measures the "trustworthiness" of the filter[cite: 1]. High precision means that when the model labels an email as "spam," it is almost certainly correct[cite: 1]. This prevents legitimate, important emails from being accidentally hidden from the user[cite: 1].</li>
-                    <li><b>Recall:</b> Measures the "thoroughness" of the filter[cite: 1]. High recall means the model is excellent at catching the majority of spam messages entering the pipeline[cite: 1]. This is critical for minimizing user exposure to phishing and fraud[cite: 1].</li>
+                    <li><b>Precision:</b> Measures the "trustworthiness" of the filter. High precision means that when the model labels an email as "spam," it is almost certainly correct. This prevents legitimate, important emails from being accidentally hidden from the user.</li>
+                    <li><b>Recall:</b> Measures the "thoroughness" of the filter. High recall means the model is excellent at catching the majority of spam messages entering the pipeline. This is critical for minimizing user exposure to phishing and fraud.</li>
                 </ul>
 
                 <h4>V. Business Impact & Value Proposition</h4>
-                <p>This project moves beyond academic metrics to solve specific operational challenges[cite: 1]:</p>
+                <p>This project moves beyond academic metrics to solve specific operational challenges:</p>
                 <ul>
-                    <li><b>Risk Mitigation:</b> By achieving high recall, the system proactively identifies phishing and fraud attempts before they reach the user[cite: 1].</li>
-                    <li><b>Operational Cost Reduction:</b> Automating the filtering process reduces the volume of tickets handled by manual moderation teams[cite: 1].</li>
-                    <li><b>Protecting Customer Lifetime Value:</b> High precision ensures legitimate, critical communications are not incorrectly flagged, preventing revenue loss and customer churn[cite: 1].</li>
-                    <li><b>Scalability:</b> The solution provides a scalable automated infrastructure capable of processing thousands of events per second[cite: 1].</li>
+                    <li><b>Risk Mitigation:</b> By achieving high recall, the system proactively identifies phishing and fraud attempts before they reach the user.</li>
+                    <li><b>Operational Cost Reduction:</b> Automating the filtering process reduces the volume of tickets handled by manual moderation teams.</li>
+                    <li><b>Protecting Customer Lifetime Value:</b> High precision ensures legitimate, critical communications are not incorrectly flagged, preventing revenue loss and customer churn.</li>
+                    <li><b>Scalability:</b> The solution provides a scalable automated infrastructure capable of processing thousands of events per second.</li>
                 </ul>
 
                 <h4>VI. Full Technical Implementation</h4>
