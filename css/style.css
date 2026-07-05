@@ -26,3 +26,85 @@ section {
     justify-content: center;
     gap: 20px;
 }
+/* 1. Global Reset & Body */
+html {
+    scroll-behavior: smooth; /* Enables one-page smooth scrolling */
+}
+
+body {
+    background-color: #ffffff; /* Modern clean white background */
+    color: #333333; /* Dark gray for high readability */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, professional font */
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 80px; /* Prevents overlap with sticky menu */
+}
+
+/* 2. Right-Aligned Sticky Navigation */
+#header {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end; /* Moves menu to the right */
+}
+
+#header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+#header a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+#header a:hover {
+    color: #5e42a6; /* Accent color on hover */
+}
+
+/* 3. Typography */
+h1, h2 {
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 1em;
+}
+
+/* 4. Section Layout */
+section {
+    padding: 60px 10%; /* Comfortable spacing */
+    min-height: 80vh;
+}
+
+/* 5. Modern Code Block Styling */
+pre {
+    background-color: #282c34; /* Dark code theme */
+    color: #abb2bf;
+    padding: 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+/* 6. Image Adjustments */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
