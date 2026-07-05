@@ -34,12 +34,14 @@
                 </ul>
 
                 <h4>III. Methodology & Technical Approach</h4>
-                <p><b>Data Processing:</b> Extracted temporal features (hour, day, month) from transaction timestamps. Applied SMOTE (Synthetic Minority Oversampling Technique) to the training set to prevent model bias toward the majority class.</p>
-                
+                <p><b>Data Processing:</b> Cleaned high-volume datasets by removing duplicates. Engineered temporal features (hour, day, month) and calculated customer age to capture fraud correlations. Applied dummy encoding for categorical variables.</p>
+
+                <p><b>Addressing Imbalance:</b> Used SMOTE (Synthetic Minority Oversampling Technique) on the training set to prevent model bias toward the legitimate transaction majority.</p>    
+
                 <p><b>Model Architecture:</b><br/>
-                1. <b>Logistic Regression:</b> Established a baseline for performance.<br/>
-                2. <b>Random Forest:</b> Leveraged for its ability to handle non-linear decision boundaries.<br/>
-                3. <b>XGBoost:</b> Implemented for optimized gradient boosting performance.</p>
+                1. <b>Logistic Regression:</b> Established a baseline performance benchmark.<br/>
+                2. <b>Random Forest:</b> Utilized for complex non-linear pattern identification.<br/>
+                3. <b>XGBoost:</b> Implemented for high-performance classification and stable ROC-AUC results.</p>
 
                 <h4>IV. Results & Model Comparison</h4>
                 <ul>
