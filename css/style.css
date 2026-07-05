@@ -23,8 +23,8 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
     display: flex;
-    justify-content: flex-end; /* Moves menu to the right */
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    justify-content: flex-end;
+    box-sizing: border-box;
 }
 
 #header nav ul {
@@ -49,11 +49,33 @@ body {
 
 /* 3. Section Layout */
 section {
-    padding: 80px 10%; /* Increased top padding to account for fixed header */
+    padding: 80px 10%;
     min-height: 80vh;
 }
 
-/* 4. Typography */
+/* 4. Project Card Layout (Side-by-side rectangles) */
+.project-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Wraps cards on mobile */
+    margin-top: 30px;
+}
+
+.project-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    background-color: #ffffff;
+    flex: 1;
+    min-width: 300px;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Typography */
 h1, h2 {
     color: #1a1a1a;
     font-weight: 800;
@@ -64,7 +86,11 @@ h2 {
     margin-bottom: 1em;
 }
 
-/* 5. Modern Code Block Styling */
+h3 {
+    margin-top: 0;
+}
+
+/* 6. Modern Code Block Styling */
 pre {
     background-color: #282c34;
     color: #abb2bf;
@@ -76,10 +102,11 @@ pre {
     margin: 1.5em 0;
 }
 
-/* 6. Image Adjustments */
+/* 7. Image Adjustments */
 img {
     max-width: 80%;
     height: auto;
     border-radius: 4px;
     display: block;
+    margin: 10px 0;
 }
