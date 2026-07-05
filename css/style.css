@@ -120,20 +120,21 @@ img {
     display: flex;
     gap: 20px;
 }
-/* Circular Profile Photo Styling */
+/* Ensure the container is a circle */
 .profile-photo {
-    width: 200px; /* Adjust size as needed */
+    width: 200px;
     height: 200px;
-    margin: 0 auto 20px auto; /* Centers the div */
+    margin: 0 auto 20px auto;
     overflow: hidden;
-    border-radius: 50%; /* Creates the circle */
-    border: 3px solid #e0e0e0; /* Matches your card borders */
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Force the image inside to fit the container */
 .profile-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures photo doesn't stretch */
+    object-fit: cover;
     display: block;
 }
