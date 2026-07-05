@@ -35,6 +35,9 @@
                 <h4>I. Executive Summary & Business Context</h4>
                 <p>Spam messages expose users to phishing and fraud risks while degrading platform trust. This project built an automated filtering pipeline for real-world email/SMS environments, ensuring messages are classified before reaching the end-user. The primary objective was balancing spam recall with the prevention of false positives.</p>
 
+                <h4>II. Exploratory Data Analysis</h4>
+                <p>The main challenge was high imbalance classes. 87% of non-spam emails and 13% of spam. None of the balancing data techniques were applied to see how models will perform and what recall and precision will be achieved.</p>
+                <img src="images/classimbalance_spamdet.jpg" alt="class imbalance" />
                 <h4>II. Methodology & Technical Approach</h4>
                 <p>I benchmarked three distinct modeling strategies, each serving different business priorities:</p>
                 <ul>
@@ -44,15 +47,15 @@
                 </ul>
 
                 <h4>III. Business Impact & Value Proposition</h4>
-<p>
-    This project moves beyond academic metrics to solve specific operational challenges:
-</p>
-<ul>
-    <li><b>Risk Mitigation:</b> By achieving high recall, the system proactively identifies phishing and fraud attempts before they reach the user, significantly lowering the enterprise’s risk profile regarding data security.</li>
-    <li><b>Operational Cost Reduction:</b> Automating the filtering process reduces the volume of tickets handled by manual moderation teams, allowing human agents to focus on high-priority exceptions rather than routine traffic.</li>
-    <li><b>Protecting Customer Lifetime Value (CLV):</b> High precision ensures legitimate, critical communications are not incorrectly flagged as spam/fraud. This prevents revenue loss from missed customer interactions and minimizes customer churn caused by poor platform experience.</li>
-    <li><b>Scalability:</b> The solution provides a scalable automated infrastructure capable of processing thousands of events per second, ensuring security coverage keeps pace with business growth.</li>
-</ul>
+                <p>
+                    This project moves beyond academic metrics to solve specific operational challenges:
+                </p>
+                <ul>
+                <li><b>Risk Mitigation:</b> By achieving high recall, the system proactively identifies phishing and fraud attempts before they reach the user, significantly lowering the enterprise’s risk profile regarding data security.</li>
+                <li><b>Operational Cost Reduction:</b> Automating the filtering process reduces the volume of tickets handled by manual moderation teams, allowing human agents to focus on high-priority exceptions rather than routine traffic.</li>
+                <li><b>Protecting Customer Lifetime Value (CLV):</b> High precision ensures legitimate, critical communications are not incorrectly flagged as spam/fraud. This prevents revenue loss from missed customer interactions and minimizes customer churn caused by poor platform experience.</li>
+                <li><b>Scalability:</b> The solution provides a scalable automated infrastructure capable of processing thousands of events per second, ensuring security coverage keeps pace with business growth.</li>
+                </ul>
 
                 <h4>IV. Full Technical Implementation</h4>
                 <a href="https://github.com/robbyxz/spam-detection/blob/main/spam-detection.ipynb" target="_blank"><b>View complete Python Notebook on GitHub</b></a>
