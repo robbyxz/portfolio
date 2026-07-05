@@ -1,93 +1,66 @@
-<!-- Header -->
-<header id="header">
-	<a href="index.html" class="title">ROBERT CZECH PORTFOLIO</a>
-	<nav>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-		</ul>
-	</nav>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam Detection | Robert Czech</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<!-- Wrapper -->
-<div id="wrapper">
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="index.html#home">HOME</a></li>
+                <li><a href="index.html#projects">PROJECTS</a></li>
+                <li><a href="index.html#cv">CV</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<!-- Main -->
-	<section id="main" class="wrapper">
-		<div class="inner">
-		
-			<span class="image fit"><img src="images/P1.jpg" alt="Spam Detection" /></span>
-			<h2><p style="text-align: center">CASE STUDY: SPAM EMAIL DETECTION & CLASSIFICATION</p></h2><br/>
-				
-			<p>
-				<h4>I. Executive Summary & Business Context</h4>
-				<font size="2">
-				Spam messages expose users to phishing and fraud risks while degrading trust in communication platforms. This project focuses on building an automated email and SMS filtering pipeline to accurately classify messages as either legitimate ("Ham") or "Spam". The primary business challenge is balancing <b>recall</b> (catching as much spam as possible) with <b>precision</b> (ensuring legitimate, business-critical messages are not falsely blocked).
-				</font>
-			</p>
-			<br/>
+    <div id="wrapper">
+        <section id="main">
+            <div class="inner">
+                <img src="images/P1.jpg" alt="Spam Detection" />
+                
+                <h2>CASE STUDY: SPAM EMAIL DETECTION</h2>
+                
+                <h4>I. Executive Summary & Business Context</h4>
+                <p>Spam messages expose users to phishing and fraud risks while degrading trust in communication platforms. This project focuses on building an automated email and SMS filtering pipeline to accurately classify messages as either legitimate ("Ham") or "Spam". The primary business challenge is balancing <b>recall</b> with <b>precision</b>.</p>
 
-			<p>
-				<h4>II. Data Overview & Exploratory Data Analysis (EDA)</h4>
-				<font size="2">
-				<ul>
-					<li><b>Dataset Size:</b> 5,572 email records curated from Kaggle.</li>
-					<li><b>Data Quality:</b> The dataset contains zero missing values or "None" text entries in the target features.</li>
-					<li><b>Class Imbalance:</b> The data is highly imbalanced, consisting of 86.59% (4,825 records) legitimate "ham" emails and only 13.41% spam emails.</li>
-					<li><b>Text Characteristics:</b> EDA revealed that most legitimate messages are under 100 characters long, while spam messages are typically longer, peaking around 160 characters.</li>
-				</ul>
-				</font>
-			</p>
-			<br/>
+                <h4>II. Data Overview & Exploratory Data Analysis (EDA)</h4>
+                <ul>
+                    <li><b>Dataset Size:</b> 5,572 email records curated from Kaggle.</li>
+                    <li><b>Data Quality:</b> Zero missing values or "None" entries.</li>
+                    <li><b>Class Imbalance:</b> 86.59% Ham vs. 13.41% Spam.</li>
+                    <li><b>Key Insight:</b> Legitimate messages typically fall under 100 characters, while spam messages cluster around 160 characters.</li>
+                </ul>
 
-			<p>
-				<h4>III. Methodology & Technical Approach</h4>
-				<font size="2">
-				<b>Data Preprocessing:</b> Categorical text labels were converted into numerical binary formats (0 and 1). A <code>CountVectorizer</code> was used for Naive Bayes models to transform raw text into a numerical matrix based on word frequency. For the RNN, text sequences were tokenized and padded to a maximum sequence length.<br/><br/>
-				<b>Model Architecture:</b><br/>
-				1. <b>Multinomial Naive Bayes:</b> Utilizes word frequencies as features to classify messages.<br/>
-				2. <b>Bernoulli Naive Bayes:</b> Uses binary features to evaluate whether specific words are present or absent.<br/>
-				3. <b>Recurrent Neural Network (RNN):</b> A deep learning architecture with an Embedding Layer (100 dimensions), a SimpleRNN Layer (128 units), a Dropout Layer (0.3), and a Dense Layer with sigmoid activation for binary classification.
-				</font>
-			</p>
-			<br/>
+                <h4>III. Methodology & Technical Approach</h4>
+                <p><b>Data Preprocessing:</b> Categorical labels were encoded to binary. Text was processed via <code>CountVectorizer</code> for frequency analysis, while RNN models utilized <code>Tokenization</code> and sequence padding for order-dependent classification.</p>
+                
+                <p><b>Model Architecture:</b><br/>
+                1. <b>Multinomial Naive Bayes:</b> Word frequency baseline.<br/>
+                2. <b>Bernoulli Naive Bayes:</b> Binary presence/absence feature model.<br/>
+                3. <b>Recurrent Neural Network (RNN):</b> Deep learning model featuring Embedding, SimpleRNN, and Dropout layers.</p>
 
-			<p>
-				<h4>IV. Results & Model Comparison</h4>
-				<font size="2">
-				The dataset was split into an 80% training set and a 20% testing set. Here is how the models performed:
-				<ul>
-					<li><b>Multinomial Naive Bayes:</b> 98% Accuracy | 0.984 ROC-AUC | 0.99 Ham Recall | 0.93 Spam Recall | 0.95 Spam Precision. Acts as a strong, balanced baseline.</li>
-					<li><b>Bernoulli Naive Bayes:</b> 98% Accuracy | 0.997 ROC-AUC | 1.00 Ham Recall | 0.87 Spam Recall | 0.98 Spam Precision. Acts as a "high strictness" filter (perfect on legitimate emails, but misses some spam).</li>
-					<li><b>RNN Model:</b> 99% Accuracy | 0.991 ROC-AUC | 1.00 Ham Recall | 0.91 Spam Recall | 0.98 Spam Precision. Delivered the strongest overall performance, effectively minimizing false alarms while strongly protecting users.</li>
-				</ul>
-				</font>
-			</p>
-			<br/>
+                <h4>IV. Results & Model Comparison</h4>
+                <ul>
+                    <li><b>Multinomial Naive Bayes:</b> 98% Accuracy (Strong baseline).</li>
+                    <li><b>Bernoulli Naive Bayes:</b> 98% Accuracy (Perfect Ham recall).</li>
+                    <li><b>RNN Model:</b> 99% Accuracy / 0.991 ROC-AUC (Best overall performance).</li>
+                </ul>
 
-			<p>
-				<h4>V. Recruiter Focus: Skills Demonstrated & Business Impact</h4>
-				<font size="2">
-				<b>Technical Competencies:</b> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn (CountVectorizer, LabelEncoder, MultinomialNB, BernoulliNB, ROC-AUC), TensorFlow/Keras (Sequential modeling, Tokenization, Sequence padding, Word Embeddings, RNN layers, Dropout regularization).<br/><br/>
-				<b>Business Value:</b>
-				<ul>
-					<li><b>Customer Experience:</b> High precision ensures important customer communications are not accidentally routed to spam.</li>
-					<li><b>Risk Mitigation:</b> High recall for spam actively shields users from phishing attempts and fraudulent attacks.</li>
-					<li><b>Operational Efficiency:</b> Automated filtering pipelines drastically reduce the financial overhead associated with manual content moderation.</li>
-				</ul>
-				</font>
-			</p>
-			<br/>
+                <h4>V. Recruiter Focus: Skills & Impact</h4>
+                <p><b>Tech Stack:</b> Python, Pandas, Scikit-Learn, TensorFlow/Keras.</p>
+                <p><b>Business Value:</b> Improved user trust through spam reduction, minimized false-positives for critical communications, and optimized operational costs via automation.</p>
 
-			<p>
-				<h4>VI. Full Technical Implementation</h4>
-				<font size="2">
-				To see the complete data pipeline, exploratory data analysis, and model training processes, please review the full Python notebook.
-				</font>
-				<br/><br/>
-				<ul>
-					<li><b><a href="https://github.com/robbyxz/spam-detection/blob/main/spam-detection.ipynb" target="_blank">View the complete Python Notebook on GitHub</a></b></li>
-				</ul>
-			</p>
-		</div>
-	</section>
-</div>
+                <h4>VI. Full Technical Implementation</h4>
+                <p>Review the full data pipeline and model training process on GitHub:</p>
+                <a href="https://github.com/robbyxz/spam-detection/blob/main/spam-detection.ipynb" target="_blank"><b>View complete Python Notebook on GitHub</b></a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
