@@ -103,13 +103,7 @@ pre {
 }
 
 /* 7. Image Adjustments */
-img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 4px;
-    display: block;
-    margin: 10px 0;
-}
+
 .skills-bar {
     margin-top: 20px;
     font-size: 0.9em;
