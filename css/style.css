@@ -1,57 +1,30 @@
-
-/* Enable smooth scrolling for the whole page */
+/* 1. Global Reset & Body */
 html {
     scroll-behavior: smooth;
 }
 
-/* Fix for fixed header overlapping content */
-section {
-    padding-top: 80px; /* Adjust based on your header height */
-    min-height: 80vh;
-}
-
-/* Sticky Header styling */
-#header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #121212;
-    padding: 20px 0;
-    z-index: 1000;
-}
-
-#header ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    gap: 20px;
-}
-/* 1. Global Reset & Body */
-html {
-    scroll-behavior: smooth; /* Enables one-page smooth scrolling */
-}
-
 body {
-    background-color: #ffffff; /* Modern clean white background */
-    color: #333333; /* Dark gray for high readability */
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, professional font */
+    background-color: #ffffff; 
+    color: #333333; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
-    padding-top: 80px; /* Prevents overlap with sticky menu */
+    padding-top: 80px; /* Prevents overlap with fixed header */
 }
 
-/* 2. Right-Aligned Sticky Navigation */
+/* 2. Header & Navigation (Right-Aligned) */
 #header {
     background-color: #ffffff;
     position: fixed;
     top: 0;
     width: 100%;
     padding: 20px 40px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
     display: flex;
     justify-content: flex-end; /* Moves menu to the right */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
 #header nav ul {
@@ -74,7 +47,13 @@ body {
     color: #5e42a6; /* Accent color on hover */
 }
 
-/* 3. Typography */
+/* 3. Section Layout */
+section {
+    padding: 80px 10%; /* Increased top padding to account for fixed header */
+    min-height: 80vh;
+}
+
+/* 4. Typography */
 h1, h2 {
     color: #1a1a1a;
     font-weight: 800;
@@ -85,21 +64,16 @@ h2 {
     margin-bottom: 1em;
 }
 
-/* 4. Section Layout */
-section {
-    padding: 60px 10%; /* Comfortable spacing */
-    min-height: 80vh;
-}
-
 /* 5. Modern Code Block Styling */
 pre {
-    background-color: #282c34; /* Dark code theme */
+    background-color: #282c34;
     color: #abb2bf;
     padding: 20px;
     border-radius: 6px;
     overflow-x: auto;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.9em;
+    margin: 1.5em 0;
 }
 
 /* 6. Image Adjustments */
@@ -107,4 +81,5 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
+    display: block;
 }
