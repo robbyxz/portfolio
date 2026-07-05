@@ -1,1 +1,28 @@
 
+/* Enable smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix for fixed header overlapping content */
+section {
+    padding-top: 80px; /* Adjust based on your header height */
+    min-height: 80vh;
+}
+
+/* Sticky Header styling */
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #121212;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+#header ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
