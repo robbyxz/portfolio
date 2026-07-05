@@ -50,15 +50,18 @@ body {
 /* 3. Section Layout */
 section {
     padding: 80px 10%;
-    min-height: 80vh;
+    min-height: 80vh; /* Standard height for other sections */
 }
 
-/* Specific Home Section Alignment */
+/* Specific Home Section: Set to a smaller height */
 #home {
+    padding-top: 60px; /* Reduced top padding */
+    min-height: 40vh;  /* Reduced height to make it smaller */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centers content vertically */
 }
 
 #home p {
