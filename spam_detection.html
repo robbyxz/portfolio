@@ -35,9 +35,11 @@
                 <p>Spam messages expose users to phishing and fraud risks while degrading platform trust. This project built an automated filtering pipeline for real-world email/SMS environments, ensuring messages are classified before reaching the end-user. The primary objective was balancing spam recall with the prevention of false positives.</p>
 
                 <h4>II. Exploratory Data Analysis</h4>
-                <p>The main challenge was high imbalance classes. 87% of non-spam emails and 13% of spam. None of the balancing data techniques were applied to see how models will perform and what recall and precision will be achieved.</p>
+                <p>One of the first questions I faced was whether the 87/13 split between non-spam and spam emails was a true hurdle or just a common characteristic of the data. Rather than jumping straight to resampling techniques, I decided to establish a performance baseline first. I wanted to see how the models would handle the data in its raw form, allowing me to measure precision and recall without any external intervention.</p>
                 <img src="images/classimbalance_spamdet.jpg" alt="class imbalance" />
-                <h4>II. Methodology & Technical Approach</h4>
+                <p>The analysis showed that most non-spam emails are fewer than 100 characters long, with the highest frequency occurring between 0 and 100 characters. There are also some messages that exceed 200 characters. In contrast, most spam emails are between 100 and 200 characters long, with the highest frequency occurring at around 160 characters. </p>
+                <img src="images/message_len.jpg" alt="message length" />
+                <h4>III. Methodology & Technical Approach</h4>
                 <p>I benchmarked three distinct modeling strategies, each serving different business priorities:</p>
                 <ul>
                     <li><b>Multinomial Naive Bayes (Balanced Baseline):</b> Provided a strong baseline with high recall for spam (0.93), reducing unwanted messages while keeping false positives at an acceptable level.</li>
