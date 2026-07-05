@@ -110,3 +110,13 @@ img {
     display: block;
     margin: 10px 0;
 }
+.skills-bar {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #5e42a6;
+    font-weight: bold;
+}
+.workflow-grid {
+    display: flex;
+    gap: 20px;
+}
