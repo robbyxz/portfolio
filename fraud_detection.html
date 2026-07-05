@@ -21,42 +21,40 @@
     <div id="wrapper">
         <section id="main">
             <div class="inner">
-                <img src="images/frauddet.jpg" alt="Fraud Detection" />
-                
                 <h2>CASE STUDY: FRAUD DETECTION SYSTEM</h2>
                 
                 <h4>I. Executive Summary & Business Context</h4>
-                <p>Credit card companies must detect fraudulent transactions in real time to minimize financial losses. This project developed predictive models to distinguish between legitimate and fraudulent activity.</p>
+                <p>Credit card companies must detect fraudulent transactions in real time to minimize financial losses. This project developed predictive models to distinguish between legitimate and fraudulent activity, focusing on robust detection in highly imbalanced datasets.</p>
 
                 <h4>II. Data Overview & Exploratory Data Analysis (EDA)</h4>
                 <ul>
-                    <li><b>Dataset:</b> Simulated transactions (2019–2020) covering 1,000 customers.</li>
-                    <li><b>Class Imbalance:</b> The data is highly imbalanced, with only 0.58% of transactions being fraudulent.</li>
-                    <li><b>Key Insight:</b> Fraudulent transactions appear more frequently in older age groups (55+) and exhibit specific spending patterns.</li>
+                    <li><b>Dataset:</b> Simulated transactions (2019–2020) with over 1,000 customers.</li>
+                    <li><b>Class Imbalance:</b> The dataset is heavily imbalanced, with only 0.58% of transactions labeled as fraud.</li>
+                    <li><b>Key Insight:</b> Transaction patterns showed distinct anomalies in specific demographics and spending thresholds.</li>
                 </ul>
 
                 <h4>III. Methodology & Technical Approach</h4>
-                <p><b>Data Processing:</b> Features were engineered from raw transaction dates and timestamps; categorical variables were encoded using dummy variables. <b>SMOTE</b> was applied to balance the training data classes.</p>
+                <p><b>Data Processing:</b> Extracted temporal features (hour, day, month) from transaction timestamps. Applied SMOTE (Synthetic Minority Oversampling Technique) to the training set to prevent model bias toward the majority class.</p>
                 
                 <p><b>Model Architecture:</b><br/>
-                1. <b>Logistic Regression:</b> Served as the baseline model.<br/>
-                2. <b>Random Forest:</b> Utilized to capture complex non-linear patterns.<br/>
-                3. <b>XGBoost:</b> Gradient boosting approach for high-performance classification.</p>
+                1. <b>Logistic Regression:</b> Established a baseline for performance.<br/>
+                2. <b>Random Forest:</b> Leveraged for its ability to handle non-linear decision boundaries.<br/>
+                3. <b>XGBoost:</b> Implemented for optimized gradient boosting performance.</p>
 
                 <h4>IV. Results & Model Comparison</h4>
                 <ul>
-                    <li><b>Logistic Regression:</b> ROC-AUC of 0.84 (High false positive rate).</li>
-                    <li><b>Random Forest:</b> ROC-AUC of 0.99 (High precision and recall).</li>
-                    <li><b>XGBoost:</b> ROC-AUC of 0.992 (Most stable performance).</li>
+                    <li><b>Logistic Regression:</b> ROC-AUC of 0.84.</li>
+                    <li><b>Random Forest:</b> ROC-AUC of 0.99.</li>
+                    <li><b>XGBoost:</b> ROC-AUC of 0.992 (Top performing model for precision-recall balance).</li>
                 </ul>
 
                 <h4>V. Recruiter Focus: Skills & Impact</h4>
-                <p><b>Tech Stack:</b> Python, Scikit-Learn, XGBoost, Seaborn.</p>
-                <p><b>Business Value:</b> Reduces direct financial loss, optimizes operational costs by lowering false alarms for investigation teams, and enhances customer trust.</p>
+                <p><b>Tech Stack:</b> Python, Pandas, Scikit-Learn, SMOTE, XGBoost.</p>
+                <p><b>Business Value:</b> Directly mitigates financial fraud, reduces manual investigation workload via high-precision alerts, and enhances overall customer security.</p>
 
                 <h4>VI. Full Technical Implementation</h4>
-                <p>Review the full pipeline and modeling process on GitHub:</p>
-                <a href="https://github.com/robbyxz/fraud-detection" target="_blank"><b>View notebooks in "fraud-model-training.ipynb" and "fraud-detection.ipynb" on GitHub</b></a>
+                <p>Review the full data preparation and model training notebooks on GitHub:</p>
+                <a href="https://github.com/robbyxz/fraud-detection" target="_blank"><b>View complete Python Notebooks on GitHub</b></a>
             </div>
         </section>
     </div>
