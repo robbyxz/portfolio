@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,48 +7,47 @@
 </head>
 <body>
 
-    <!-- Navigation Menu -->
     <header id="header">
-    <nav>
-        <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Sections -->
     <section id="home">
         <h1>ROBERT CZECH</h1>
-        <p>Data Scientist with a passion for transforming complex datasets into clear, actionable business strategies. I specialize in building end-to-end machine learning pipelines, leveraging Python and SQL to uncover trends, 
-        and developing predictive models that drive measurable organizational impact.</p>
+        <p>Data Scientist with a passion for transforming complex datasets into clear, actionable business strategies. I specialize in building end-to-end machine learning pipelines, leveraging Python and SQL to uncover trends, and developing predictive models that drive measurable organizational impact.</p>
     </section>
 
     <section id="projects">
         <h2>PROJECTS</h2>
-        <!-- Your Project Links Here -->
-        <h3>Spam Detection</h3>
-        <h4>Summary:</h4>
-        <p>This project builds a spam detection system using machine learning and deep learning techniques. It classifies email messages as Spam or Ham using Naive Bayes models and a Recurrent Neural Network (RNN).</p>
-        <h4>Methotology:</h4>
-        <ul>
-            <li>The project follows a standard NLP pipeline: Data loading and exploration, </li>
-            <li>Text preprocessing (cleaning and normalization), </li>
-            <li>Train-test split, </li>
-            <li>Text vectorization using CountVectorizer (for Naive Bayes models), </li>
-            <li>Tokenization and padding (for RNN model)</li>
-            </ul>
-        <h4>Business Impact:</h4>
-            <p>This system can be used to automatically filter spam messages in email or messaging platforms. It helps:</p>
-            <ul>
-            <li>Reduce phishing and scam exposure</li>
-            <li>Improve user experience by filtering unwanted content</li>
-            <li>Lower operational costs by reducing manual moderation</li>
-            <li>Increase platform security and trust</li>
-            </ul>
-        <a href="spam_detection.html">More details</a>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <h3>Spam Email Detection & Classification</h3>
+                <h4>Summary:</h4>
+                <p>Developed an end-to-end NLP pipeline to classify messages as "Spam" or "Ham," addressing significant class imbalance to optimize platform trust.</p>
+                <h4>Methodology:</h4>
+                <ul>
+                    <li>Text cleaning, tokenization, and sequence padding.</li>
+                    <li>Comparison of Naive Bayes vs. Recurrent Neural Network (RNN) architectures.</li>
+                    <li>Optimization via Embedding and Dropout layers to prevent overfitting.</li>
+                </ul>
+                <h4>Business Impact:</h4>
+                <p>Reduced phishing exposure and lowered manual moderation costs while maintaining high precision for legitimate user communication.</p>
+                <a href="project1.html">More details</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Coming Soon...</h3>
+                <p>Stay tuned for more data science projects involving SQL analysis, predictive modeling, and data visualization.</p>
+            </div>
+            
+        </div>
     </section>
 
     <section id="cv">
