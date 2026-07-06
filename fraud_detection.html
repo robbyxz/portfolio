@@ -8,67 +8,139 @@
 </head>
 <body>
 
-    <header id="header">
-        <nav>
-            <ul>
-                <li><a href="index.html#home">HOME</a></li>
-                <li><a href="index.html#projects">PROJECTS</a></li>
-                <li><a href="index.html#cv">CV</a></li>
-                <li><a href="index.html#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+<header id="header">
+    <nav>
+        <ul>
+            <li><a href="index.html#home">HOME</a></li>
+            <li><a href="index.html#projects">PROJECTS</a></li>
+            <li><a href="index.html#cv">CV</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div id="wrapper">
-        <section id="main">
-            <div class="inner">
-                <h2>CASE STUDY: FRAUD DETECTION SYSTEM</h2>
-                
-                <h4>I. Executive Summary & Business Context</h4>
-                <p>Financial institutions face the ongoing challenge of identifying fraudulent transactions instantaneously to prevent direct financial losses. This project focused on building a robust classification pipeline capable of handling highly imbalanced datasets, where fraud represents only a tiny fraction of total transaction volume. The primary objective was to maximize fraud detection (recall) while minimizing the operational burden of false alarms (precision).</p>
+<div id="wrapper">
+<section id="main">
+<div class="inner">
 
-                <h4>II. Data Overview & Exploratory Data Analysis (EDA)</h4>
-                <ul>
-                    <li><b>Dataset:</b> A simulated credit card dataset spanning January 1, 2019, to December 31, 2020, covering 1,000 customers and 800 merchants.</li>
-                    <li><b>Class Imbalance:</b> The dataset was heavily imbalanced; non-fraudulent transactions accounted for 99.42% of the volume, with fraudulent transactions making up only 0.58%.</li>
-                    <li><b>Key Insight:</b> Most legitimate transactions were under $200. Conversely, fraudulent transactions exhibited two distinct spending peaks—one around $50 and a secondary peak near $300.</li>
-                </ul>
+<h2>FRAUD DETECTION SYSTEM</h2>
 
-                <h4>III. Methodology & Technical Approach</h4>
-                <p>The pipeline was built to transform raw transaction logs into actionable predictive signals:</p>
-                <ul>
-                    <li><b>Feature Engineering:</b> Raw timestamps were processed into meaningful temporal features (hour, day of the week, month), and customer age was derived from their date of birth. Categorical variables were converted using dummy encoding.</li>
-                    <li><b>Addressing Imbalance:</b> To prevent model bias toward the majority class, I applied the <b>SMOTE (Synthetic Minority Oversampling Technique)</b> on the training set to create synthetic examples of fraudulent transactions.</li>
-                    <li><b>Model Architecture:</b>
-                        <ol>
-                            <li><b>Logistic Regression:</b> Established a performance baseline.</li>
-                            <li><b>Random Forest:</b> Utilized for non-linear pattern identification.</li>
-                            <li><b>XGBoost:</b> Implemented for high-performance classification and stable ROC-AUC results.</li>
-                        </ol>
-                    </li>
-                </ul>
+<h4>I. Business Problem</h4>
 
-                <h4>IV. Results & Model Comparison</h4>
-                <ul>
-                    <li><b>Logistic Regression:</b> ROC-AUC of 0.84.</li>
-                    <li><b>Random Forest:</b> ROC-AUC of 0.99.</li>
-                    <li><b>XGBoost:</b> ROC-AUC of 0.992 (Top performing model for precision-recall balance).</li>
-                </ul>
+<p>
+Financial institutions must detect fraudulent transactions in real time while operating on highly imbalanced datasets.
+Fraud represents a very small fraction of total transactions, making accurate detection both critical and challenging.
+The objective of this project was to build a classification system that maximizes fraud detection (recall) while minimizing false positives that impact legitimate customers.
+</p>
 
-                <h4>V. Business Impact & Value Proposition</h4>
-                <p>This project moves beyond academic metrics to solve specific operational challenges:</p>
-                <ul>
-                    <li><b>Risk Mitigation:</b> High recall proactively identifies fraudulent attempts, directly lowering financial exposure.</li>
-                    <li><b>Operational Cost Reduction:</b> High precision reduces the volume of false-positive alerts, lowering the workload for investigation teams.</li>
-                    <li><b>Customer Experience:</b> Fewer incorrectly blocked legitimate transactions lead to higher customer trust and lower churn.</li>
-                </ul>
+<hr>
 
-                <h4>VI. Full Technical Implementation</h4>
-                <p>Review the full data preparation and model training notebooks on GitHub:</p>
-                <a href="https://github.com/robbyxz/fraud-detection" target="_blank"><b>View complete Python Notebooks on GitHub</b></a>
-            </div>
-        </section>
-    </div>
+<h4>II. Data Overview & Exploratory Data Analysis</h4>
+
+<ul>
+    <li><b>Dataset:</b> Simulated credit card transactions covering 1,000 customers and 800 merchants from 2019–2020.</li>
+
+    <li><b>Class Imbalance:</b> Only 0.58% of transactions were fraudulent, creating a severe imbalance challenge.</li>
+
+    <li><b>Key Insight:</b> Fraudulent transactions showed distinct spending patterns, including peaks around $50 and $300, differing from legitimate transaction behaviour.</li>
+</ul>
+
+<hr>
+
+<h4>III. Methodology & Technical Approach</h4>
+
+<p>
+The modelling pipeline was designed to transform raw transaction data into predictive features and evaluate multiple machine learning approaches under a class-imbalanced setting.
+</p>
+
+<ul>
+
+<li><b>Feature Engineering:</b> Extracted temporal features (hour, day, month) and derived customer age from birthdate. Categorical variables were encoded using one-hot encoding.</li>
+
+<li><b>Class Imbalance Handling:</b> Applied SMOTE to generate synthetic fraud examples in the training set, improving model sensitivity to minority class patterns.</li>
+
+<li><b>Models Evaluated:</b>
+    <ol>
+        <li><b>Logistic Regression:</b> Baseline linear model for comparison.</li>
+        <li><b>Random Forest:</b> Captured non-linear relationships in transaction behaviour.</li>
+        <li><b>XGBoost:</b> Gradient boosting model optimized for high predictive performance.</li>
+    </ol>
+</li>
+
+</ul>
+
+<hr>
+
+<h4>IV. Results & Model Comparison</h4>
+
+<ul>
+    <li><b>Logistic Regression:</b> ROC-AUC = 0.84 (baseline performance).</li>
+    <li><b>Random Forest:</b> ROC-AUC = 0.99 (strong non-linear performance).</li>
+    <li><b>XGBoost:</b> ROC-AUC = 0.992 (best overall performance and stability).</li>
+</ul>
+
+<p>
+While all tree-based models performed strongly, XGBoost provided the best balance between precision and recall,
+making it the most suitable candidate for real-world deployment scenarios.
+</p>
+
+<hr>
+
+<h4>V. Model Selection Rationale</h4>
+
+<p>
+XGBoost was selected as the preferred model due to its superior ability to handle complex feature interactions
+and its robustness under severe class imbalance conditions.
+Although Random Forest achieved similar performance, XGBoost demonstrated more stable results across evaluation metrics.
+</p>
+
+<hr>
+
+<h4>VI. Business Impact</h4>
+
+<ul>
+
+<li><b>Risk Reduction:</b> Improved fraud detection reduces direct financial losses by identifying suspicious transactions earlier.</li>
+
+<li><b>Operational Efficiency:</b> Lower false-positive rates reduce workload for fraud investigation teams.</li>
+
+<li><b>Customer Experience:</b> Minimizing incorrect transaction blocks improves customer trust and satisfaction.</li>
+
+<li><b>Scalability:</b> The pipeline can be extended to real-time fraud monitoring systems in high-volume financial environments.</li>
+
+</ul>
+
+<hr>
+
+<h4>VII. Key Takeaways</h4>
+
+<ul>
+
+<li>Built an end-to-end fraud detection pipeline for highly imbalanced data.</li>
+
+<li>Applied SMOTE to improve minority class learning.</li>
+
+<li>Compared multiple machine learning models using ROC-AUC as primary metric.</li>
+
+<li>Identified XGBoost as the most effective model for deployment scenarios.</li>
+
+</ul>
+
+<hr>
+
+<h4>VIII. Full Implementation</h4>
+
+<p>
+Full code, preprocessing steps, and model training are available in the GitHub repository.
+</p>
+
+<a href="https://github.com/robbyxz/fraud-detection" target="_blank">
+<b>View Full Project on GitHub</b>
+</a>
+
+</div>
+</section>
+</div>
 
 </body>
 </html>
