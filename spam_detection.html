@@ -8,72 +8,222 @@
 </head>
 <body>
 
-    <header id="header">
-        <nav>
-            <ul>
-                <li><a href="index.html#home">HOME</a></li>
-                <li><a href="index.html#projects">PROJECTS</a></li>
-                <li><a href="index.html#cv">CV</a></li>
-                <li><a href="index.html#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+<header id="header">
+    <nav>
+        <ul>
+            <li><a href="index.html#home">HOME</a></li>
+            <li><a href="index.html#projects">PROJECTS</a></li>
+            <li><a href="index.html#cv">CV</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div id="wrapper">
-        <section id="main">
-            <div class="inner">
-                <img src="images/spam_title.jpg" alt="Spam Detection" />
-                
-                <div class="summary-box" style="background: #f4f4f4; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3>PROJECT SNAPSHOT</h3>
-                    <p><strong>Business Goal:</strong> Automate spam filtering for real-world email/SMS pipelines to protect user trust and reduce manual moderation costs.</p>
-                    <p><strong>Key Result:</strong> RNN model deployed with high performance; optimized the balance between phishing protection (Recall) and legitimate message delivery (Precision).</p>
-                    <p><strong>Tech Stack:</strong> Python, TensorFlow/Keras, Scikit-Learn, RNN Architectures.</p>
-                </div>
+<div id="wrapper">
+<section id="main">
+<div class="inner">
 
-                <h4>I. Executive Summary & Business Context</h4>
-                <p>Spam messages expose users to phishing and fraud risks while degrading platform trust. This project built an automated filtering pipeline for real-world email/SMS environments, ensuring messages are classified before reaching the end-user. The primary objective was balancing spam recall with the prevention of false positives.</p>
+<img src="images/spam_title.jpg" alt="Spam Detection"/>
 
-                <h4>II. Exploratory Data Analysis & Strategy</h4>
-                <p>One of the first questions I faced was whether the 87% non-spam to 13% spam split was a true hurdle or just a common characteristic of the data. Rather than jumping straight to resampling techniques, I decided to establish a performance baseline first. I wanted to see how the models would handle the data in its raw form, allowing me to measure precision and recall without any external intervention.</p>
-                
-                <img src="images/classimbalance_spamdet.jpg" alt="class imbalance" />
-                <p>The analysis revealed distinct structural differences: most non-spam emails are fewer than 100 characters long, whereas spam messages tend to cluster around the 160-character mark. These insights guided the subsequent modeling approach.</p>
-                <img src="images/message_len.jpg" alt="message length" />
+<div class="summary-box" style="background:#f4f4f4;padding:20px;border-radius:8px;margin-bottom:25px;">
 
-                <h4>III. Methodology & Technical Approach</h4>
-                <p>I benchmarked three distinct modeling strategies, focusing on <b>Precision</b> (minimizing false alarms for legitimate users) and <b>Recall</b> (maximizing the detection of actual spam):</p>
-                <ul>
-                    <li><b>Multinomial Naive Bayes:</b> Provided a strong baseline with high spam recall (0.93), capturing the vast majority of threats while maintaining high precision (0.95). The ROC-AUC was 0.98</li>
-                    <img src="images/NaiveBayes_ROC.jpg" alt="ROC" />
-                    <li><b>Bernoulli Naive Bayes:</b> Prioritized extreme precision to ensure zero disruption to legitimate traffic (1.00 recall for "Ham"). This is ideal for banking or critical support environments where blocking a legitimate message is more costly than letting some spam pass through. The ROC-AUC was 0.997</li>
-                    <img src="images/NaiveBayesBer_ROC.jpg" alt="ROC" />
-                    <li><b>RNN Model:</b> Achieved the optimal balance, with high precision (0.98) and strong recall (0.91). This indicates a sophisticated ability to distinguish between classes while keeping false alarms at a near-zero level for legitimate users. The ROC-AUC was 0.95</li>
-                    <img src="images/RNN_ROC.jpg" alt="ROC" />
-                </ul>
+<h3>PROJECT SNAPSHOT</h3>
 
-                <h4>IV. Understanding the Metrics</h4>
-                <p>In this project, these metrics serve specific business functions:</p>
-                <ul>
-                    <li><b>Precision:</b> Measures the "trustworthiness" of the filter. High precision means that when the model labels an email as "spam," it is almost certainly correct. This prevents legitimate, important emails from being accidentally hidden from the user.</li>
-                    <li><b>Recall:</b> Measures the "thoroughness" of the filter. High recall means the model is excellent at catching the majority of spam messages entering the pipeline. This is critical for minimizing user exposure to phishing and fraud.</li>
-                </ul>
+<p><strong>Business Goal:</strong> Develop an automated spam classification system capable of filtering email and SMS messages while minimizing phishing exposure and reducing manual moderation effort.</p>
 
-                <h4>V. Business Impact & Value Proposition</h4>
-                <p>This project moves beyond academic metrics to solve specific operational challenges:</p>
-                <ul>
-                    <li><b>Risk Mitigation:</b> By achieving high recall, the system proactively identifies phishing and fraud attempts before they reach the user.</li>
-                    <li><b>Operational Cost Reduction:</b> Automating the filtering process reduces the volume of tickets handled by manual moderation teams.</li>
-                    <li><b>Protecting Customer Lifetime Value:</b> High precision ensures legitimate, critical communications are not incorrectly flagged, preventing revenue loss and customer churn.</li>
-                    <li><b>Scalability:</b> The solution provides a scalable automated infrastructure capable of processing thousands of events per second.</li>
-                </ul>
+<p><strong>Dataset:</strong> 5,572 labelled SMS messages (Ham and Spam).</p>
 
-                <h4>VI. Full Technical Implementation</h4>
-                <p>You can find the detailed code, analysis, and documentation in <em>spam-detection.ipynb</em>:</p>
-                <a href="https://github.com/robbyxz/spam-detection/blob/main/spam-detection.ipynb" target="_blank"><b>View complete Python Notebook on GitHub</b></a>
-            </div>
-        </section>
-    </div>
+<p><strong>Key Result:</strong> Compared three machine learning approaches and identified the RNN model as providing the strongest balance between spam detection (Recall) and legitimate message classification (Precision).</p>
+
+<p><strong>Tech Stack:</strong> Python, Pandas, NumPy, Scikit-Learn, TensorFlow/Keras, NLTK, Matplotlib.</p>
+
+</div>
+
+<h4>I. Executive Summary & Business Context</h4>
+
+<p>
+Spam messages expose users to phishing attacks, fraud, and unwanted communications while reducing trust in digital platforms.
+This project developed an automated machine learning pipeline for classifying incoming email and SMS messages as either <b>Ham</b> or <b>Spam</b>.
+The primary business objective was to maximize spam detection without incorrectly filtering legitimate customer communications.
+</p>
+
+<hr>
+
+<h4>II. Exploratory Data Analysis</h4>
+
+<p>
+The initial analytical question was whether the dataset's class imbalance (approximately 87% Ham and 13% Spam)
+required corrective techniques such as oversampling or undersampling.
+Rather than introducing additional preprocessing immediately,
+baseline models were trained on the original dataset to understand how class imbalance affected model performance.
+</p>
+
+<img src="images/classimbalance_spamdet.jpg" alt="Class imbalance"/>
+
+<p>
+Exploratory analysis also revealed meaningful structural differences between both classes.
+Most legitimate messages contained fewer than 100 characters,
+while spam messages frequently clustered around 160 characters.
+These findings influenced the feature engineering and modelling strategy.
+</p>
+
+<img src="images/message_len.jpg" alt="Message length"/>
+
+<hr>
+
+<h4>III. Methodology & Technical Approach</h4>
+
+<p>
+Three different classification approaches were evaluated using business-relevant performance metrics:
+Precision, Recall, F1-score and ROC-AUC.
+Since the dataset was moderately imbalanced,
+accuracy alone was not considered sufficient for model comparison.
+</p>
+
+<table style="width:100%;border-collapse:collapse;margin-bottom:25px;">
+<thead>
+<tr style="background:#efefef;">
+<th style="padding:10px;">Model</th>
+<th style="padding:10px;">ROC-AUC</th>
+<th style="padding:10px;">Strength</th>
+<th style="padding:10px;">Business Use Case</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td style="padding:10px;">Multinomial Naive Bayes</td>
+<td style="padding:10px;">0.98</td>
+<td style="padding:10px;">High Recall</td>
+<td style="padding:10px;">Strong baseline capable of detecting the majority of spam messages.</td>
+</tr>
+
+<tr>
+<td style="padding:10px;">Bernoulli Naive Bayes</td>
+<td style="padding:10px;">0.997</td>
+<td style="padding:10px;">Highest Precision</td>
+<td style="padding:10px;">Suitable when incorrectly blocking legitimate messages carries significant business risk.</td>
+</tr>
+
+<tr>
+<td style="padding:10px;">Recurrent Neural Network (RNN)</td>
+<td style="padding:10px;">0.95</td>
+<td style="padding:10px;">Best Precision–Recall Balance</td>
+<td style="padding:10px;">Provides the strongest balance between phishing detection and legitimate message delivery.</td>
+</tr>
+
+</tbody>
+</table>
+
+<img src="images/NaiveBayes_ROC.jpg" alt="Multinomial NB ROC"/>
+<br><br>
+
+<img src="images/NaiveBayesBer_ROC.jpg" alt="Bernoulli NB ROC"/>
+<br><br>
+
+<img src="images/RNN_ROC.jpg" alt="RNN ROC"/>
+
+<hr>
+
+<h4>IV. Model Selection Rationale</h4>
+
+<p>
+Although Bernoulli Naive Bayes achieved the highest ROC-AUC,
+the RNN was selected as the preferred model because it offered the most balanced trade-off between Precision and Recall.
+Its ability to learn contextual relationships within text enabled more reliable spam detection while maintaining very few false alarms for legitimate messages.
+</p>
+
+<p>
+Each evaluated model remains valuable depending on business priorities:
+</p>
+
+<ul>
+
+<li><b>Multinomial Naive Bayes</b> — fast baseline with strong overall performance and minimal computational requirements.</li>
+
+<li><b>Bernoulli Naive Bayes</b> — preferred when avoiding false positives is the highest priority.</li>
+
+<li><b>RNN</b> — recommended when maximizing overall classification performance is the primary objective.</li>
+
+</ul>
+
+<hr>
+
+<h4>V. Understanding the Metrics</h4>
+
+<p>
+Rather than relying solely on overall accuracy,
+the models were evaluated using metrics directly aligned with business objectives.
+</p>
+
+<ul>
+
+<li><b>Precision</b> measures how trustworthy spam predictions are. High precision minimizes false positives, ensuring legitimate customer communications are delivered successfully.</li>
+
+<li><b>Recall</b> measures how effectively spam messages are detected. High recall reduces user exposure to phishing attempts and fraudulent communications.</li>
+
+<li><b>F1-score</b> balances Precision and Recall, making it particularly useful when evaluating imbalanced classification problems.</li>
+
+<li><b>ROC-AUC</b> measures the model's overall ability to distinguish between spam and legitimate messages across different decision thresholds.</li>
+
+</ul>
+
+<hr>
+
+<h4>VI. Business Impact</h4>
+
+<p>
+Beyond predictive performance,
+the project demonstrates how machine learning can improve operational efficiency and customer experience.
+</p>
+
+<ul>
+
+<li><b>Risk Reduction:</b> Detects phishing and fraudulent messages before reaching users.</li>
+
+<li><b>Operational Efficiency:</b> Reduces the volume of messages requiring manual moderation.</li>
+
+<li><b>Customer Trust:</b> Minimizes false positives, helping ensure important customer communications are delivered correctly.</li>
+
+<li><b>Scalability:</b> Provides an automated solution that can be integrated into high-volume messaging workflows.</li>
+
+</ul>
+
+<hr>
+
+<h4>VII. Key Takeaways</h4>
+
+<ul>
+
+<li>Developed a complete end-to-end spam classification pipeline.</li>
+
+<li>Performed exploratory data analysis to guide modelling decisions.</li>
+
+<li>Compared traditional machine learning and deep learning approaches.</li>
+
+<li>Evaluated models using business-focused metrics instead of accuracy alone.</li>
+
+<li>Demonstrated how different models support different operational priorities.</li>
+
+</ul>
+
+<hr>
+
+<h4>VIII. Full Technical Implementation</h4>
+
+<p>
+The complete notebook includes data preprocessing, exploratory analysis, feature engineering,
+model training, evaluation and performance comparison.
+</p>
+
+<a href="https://github.com/robbyxz/spam-detection/blob/main/spam-detection.ipynb" target="_blank">
+<b>View Full Python Notebook on GitHub</b>
+</a>
+
+</div>
+</section>
+</div>
 
 </body>
 </html>
