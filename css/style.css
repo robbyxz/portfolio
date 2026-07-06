@@ -56,7 +56,7 @@ section {
 /* Specific Home Section: Set to a smaller height */
 #home {
     padding-top: 60px; /* Reduced top padding */
-    min-height: 40vh;  /* Reduced height to make it smaller */
+    min-height: 30vh;  /* Reduced height to make it smaller */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@ section {
     max-width: 800px;
 }
 #contact {
-    padding-top: 60px; /* Reduced top padding */
+    padding-top: 30px; /* Reduced top padding */
     min-height: 20vh;  /* Reduced height to make it smaller */
 }
 
