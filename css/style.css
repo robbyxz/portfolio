@@ -222,3 +222,46 @@ pre {
     color: #8c112a;
     border-color: #8c112a;
 }
+/* Contact Section */
+#contact {
+    min-height: auto;
+    padding: 50px 10%;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 15px;
+}
+
+#contact p {
+    max-width: 650px;
+    margin: 0 auto 25px auto;
+    color: #555555;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0 auto;
+    max-width: 500px;
+}
+
+.contact-list li {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.contact-list a {
+    color: #5e42a6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
