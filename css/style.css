@@ -213,7 +213,12 @@ pre {
     border-color: #ffe4a3;
 }
 .tag-nlp { 
-    background: #fff7e6;
-    color: #5ab3d1;
-    border-color: #1a627a;
+    background: #8ee88f;
+    color: #0d4f0e;
+    border-color: #0d4f0e;
+}
+.tag-dl {
+    background: #8c112a;
+    color: #f06984;
+    border-color: #8c112a;
 }
