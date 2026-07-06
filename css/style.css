@@ -48,7 +48,7 @@ body {
 }
 
 /* 3. Section Layout */
-.section { 
+section { 
     padding: 80px 10%; 
     min-height: 80vh; /* Standard height for other sections */ 
 }
