@@ -34,40 +34,71 @@
         <div class="project-grid">
             
             <div class="project-card">
-                <h3>CASE STUDY: SPAM EMAIL DETECTION & CLASSIFICATION</h3>
-                <h4>I. Executive Summary & Business Context</h4>
-                <p>Spam messages expose users to phishing and fraud risks. This project focuses on building an automated email and SMS filtering pipeline to accurately classify messages as either legitimate ("Ham") or "Spam", balancing high recall with precision.</p>
-                
-                <h4>II. Methodology & Technical Approach</h4>
-                <ul>
-                    <li><b>Preprocessing:</b> Text cleaning, tokenization, and sequence padding.</li>
-                    <li><b>Modeling:</b> Benchmarked performance using Multinomial Naive Bayes, Bernoulli Naive Bayes, and a Deep Learning Recurrent Neural Network (RNN).</li>
-                    <li><b>Optimization:</b> Used Embedding layers and Dropout regularization to prevent overfitting.</li>
-                </ul>
 
-                <h4>III. Business Impact</h4>
-                <p>This automated system reduces phishing exposure and lowers operational costs associated with manual content moderation while maintaining high precision for legitimate business communications.</p>
-                <a href="spam_detection.html">View Full Case Study</a>
-            </div>
+    <h3>CASE STUDY: SPAM EMAIL DETECTION & CLASSIFICATION</h3>
 
-            <div class="project-card">
-    <h3>CASE STUDY: FRAUD DETECTION SYSTEM</h3>
-    <h4>I. Executive Summary & Business Context</h4>
-    <p>Financial institutions require robust detection systems to minimize losses from fraudulent credit card transactions. This project developed an automated classification pipeline to distinguish between legitimate and fraudulent activity, focusing on high-performance detection within highly imbalanced datasets.</p>
-    
-    <h4>II. Methodology & Technical Approach</h4>
+    <h4>I. Business Problem</h4>
+
+    <p>
+        Developed an automated machine learning pipeline to classify email and SMS messages as
+        <b>Ham</b> or <b>Spam</b>, reducing phishing exposure while minimizing false positives for
+        legitimate communications.
+    </p>
+
+    <h4>II. Technical Approach</h4>
+
     <ul>
-        <li><b>Preprocessing:</b> Data cleaning, duplicate removal, and categorical encoding via dummy variables.</li>
-        <li><b>Feature Engineering:</b> Extracted temporal patterns (hour, day, month) and demographic features (age) to identify risk-prone behavior.</li>
-        <li><b>Optimization:</b> Applied SMOTE to handle class imbalance (0.58% fraud rate) and benchmarked Logistic Regression, Random Forest, and XGBoost models.</li>
+        <li><b>Data Preparation:</b> Text cleaning, tokenization and feature engineering.</li>
+
+        <li><b>Model Comparison:</b> Evaluated Multinomial Naive Bayes, Bernoulli Naive Bayes and a Recurrent Neural Network (RNN).</li>
+
+        <li><b>Evaluation:</b> Compared models using Precision, Recall, F1-score and ROC-AUC to identify the most suitable business solution.</li>
     </ul>
 
-    <h4>III. Business Impact</h4>
-    <p>This automated system provides real-time transaction scoring, reducing financial exposure through high recall and minimizing operational costs by lowering false alarms via high-precision classification.</p>
-    <a href="fraud_detection.html">View Full Case Study</a>
+    <h4>III. Business Value</h4>
+
+    <p>
+        Demonstrated how different machine learning models support different operational priorities,
+        enabling scalable spam detection while protecting legitimate customer communications.
+    </p>
+
+    <a href="spam_detection.html">View Full Case Study</a>
+
 </div>
-            
-        </div>
+
+            <div class="project-card">
+
+    <h3>CASE STUDY: FRAUD DETECTION SYSTEM</h3>
+
+    <h4>I. Business Problem</h4>
+
+    <p>
+        Built a machine learning solution to identify fraudulent credit card transactions,
+        helping financial institutions reduce fraud losses while minimizing disruption to legitimate customers.
+    </p>
+
+    <h4>II. Technical Approach</h4>
+
+    <ul>
+
+        <li><b>Data Preparation:</b> Data cleaning, feature engineering and categorical encoding.</li>
+
+        <li><b>Class Imbalance:</b> Applied SMOTE to address the low fraud rate (0.58%).</li>
+
+        <li><b>Model Comparison:</b> Benchmarked Logistic Regression, Random Forest and XGBoost using business-focused evaluation metrics.</li>
+
+    </ul>
+
+    <h4>III. Business Value</h4>
+
+    <p>
+        Demonstrated how predictive analytics can support real-time fraud detection,
+        reducing financial losses while improving operational efficiency and customer trust.
+    </p>
+
+    <a href="fraud_detection.html">View Full Case Study</a>
+
+</div>
     </section>
 
     <section id="cv">
