@@ -60,8 +60,16 @@ The objective of this project was to build a classification system that maximize
     <li><b>Dataset:</b> Simulated credit card transactions covering 1,000 customers and 800 merchants from 2019–2020.</li>
 
     <li><b>Class Imbalance:</b> Only 0.58% of transactions were fraudulent, creating a severe imbalance challenge.</li>
+    <img src="images/fraud_imbalance.jpg" alt="Fraud Imbalance"/>
 
     <li><b>Key Insight:</b> Fraudulent transactions showed distinct spending patterns, including peaks around $50 and $300, differing from legitimate transaction behaviour.</li>
+    <img src="images/amount_fraud.jpg" alt="Fraud Amount"/>
+
+    <li><b>Key Insight:</b> The age distribution differs between legitimate and fraudulent transactions. Legitimate transactions show two distinct peaks among customers aged 35–40 and 50–55, while the fraud distribution is smoother and more evenly spread across older age groups. This suggests that older customers may be relatively more represented in fraudulent transactions, warranting further investigation during feature engineering and modelling.</li>
+    <img src="images/age_fraud.jpg" alt="Fraud Age"/>
+
+    <li><b>Key Insight:</b> Most fraudulent transactions occur during nighttime hours. From 10 p.m. to 3 a.m., a suspicious pattern is observed, as most customers are typically asleep during these hours. Non-fraudulent transactions are evenly distributed across all hours of the day.</li>
+    <img src="images/time_fraud.jpg" alt="Fraud Time"/>
 </ul>
 
 <hr>
