@@ -157,3 +157,65 @@ pre {
     font-size: 0.9em;
     margin: 1.5em 0;
 }
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 15px 0;
+}
+
+/* Base badge style */
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.tag:hover {
+    transform: translateY(-1px);
+    cursor: default;
+    opacity: 0.9;
+}
+
+/* Individual colors */
+.tag-ml {
+    background: #e8f1ff;
+    color: #1f5fbf;
+    border-color: #cfe2ff;
+}
+
+.tag-nlp {
+    background: #e8fff3;
+    color: #1f8a5b;
+    border-color: #c7f5df;
+}
+
+.tag-dl {
+    background: #f3e8ff;
+    color: #6b2fbf;
+    border-color: #e0ccff;
+}
+
+.tag-python {
+    background: #fff7e6;
+    color: #b7791f;
+    border-color: #ffe4a3;
+}
+
+.tag-finance {
+    background: #e8fff1;
+    color: #167a4a;
+    border-color: #bff0d0;
+}
+
+.tag-tree {
+    background: #ffecec;
+    color: #b42318;
+    border-color: #ffc7c7;
+}
