@@ -48,10 +48,6 @@ body {
 }
 
 /* 3. Section Layout */
-section {
-    padding: 80px 10%;
-    min-height: 80vh; /* Standard height for other sections */
-}
 
 /* Specific Home Section: Set to a smaller height */
 #home {
