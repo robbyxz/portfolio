@@ -67,10 +67,6 @@ section {
 #home p {
     max-width: 800px;
 }
-#contact {
-    padding-top: 30px; /* Reduced top padding */
-    min-height: 20vh;  /* Reduced height to make it smaller */
-}
 
 /* 4. Project Card Layout */
 .project-grid {
