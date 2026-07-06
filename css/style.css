@@ -70,11 +70,6 @@ section {
 #contact {
     padding-top: 60px; /* Reduced top padding */
     min-height: 20vh;  /* Reduced height to make it smaller */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Centers content vertically */
 }
 
 /* 4. Project Card Layout */
